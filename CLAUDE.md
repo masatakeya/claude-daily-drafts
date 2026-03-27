@@ -57,6 +57,5 @@ generated_at: HH:MM JST
 （タイトルとスキップ理由を簡潔に）
 
 
-  CLAUDE.md
-git commit -m "Add CLAUDE.md for daily draft generation"
-git push
+
+ 
