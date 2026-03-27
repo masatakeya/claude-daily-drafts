@@ -1,0 +1,62 @@
+
+# 毎日の情報収集・Facebook投稿草稿生成
+
+## 実行タイミング
+毎日 22:00 JST（13:00 UTC）
+
+## やること
+
+### Step 1: 情報収集
+以下のRSSフィードを WebFetch で取得し、
+過去24時間以内の記事を抽出する。
+
+- https://ict-enews.net/feed/
+- https://edtechzine.jp/rss/new
+- https://coeteco.jp/feed
+
+### Step 2: 記事の選定
+以下のテーマに関連する記事を優先する。
+- 生成AI × 教育
+- プログラミング教育
+- デジタルシティズンシップ
+- 個別最適な学び
+- GIGAスクール・ICT活用
+
+無関係・広告的な内容はスキップ。
+
+### Step 3: Facebook投稿草稿を生成
+選定した記事ごとに、以下の形式で草稿を作成する。
+
+---
+【記事タイトル】
+（記事URLを記載）
+
+（150〜200字の所感。
+教育現場の文脈に引き寄せた解説。
+「〜ですね」「〜と思います」など
+竹谷正明らしい穏やかで思考を促すトーン。
+絵文字なし。）
+
+#生成AI #教育 #プログラミング教育（関連タグ2〜3個）
+---
+
+### Step 4: ファイルに保存
+drafts/YYYY-MM-DD.md としてコミットする。
+
+フォーマット：
+---
+date: YYYY-MM-DD
+generated_at: HH:MM JST
+---
+
+## 本日の候補記事と投稿草稿
+
+（草稿を並べて記載）
+
+## スキップした記事
+（タイトルとスキップ理由を簡潔に）
+
+
+  CLAUDE.md
+git commit -m "Add CLAUDE.md for daily draft generation"
+git push
