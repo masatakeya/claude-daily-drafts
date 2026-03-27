@@ -11,11 +11,11 @@
 各サイトごとに「サイト名 最新記事」で検索し、
 記事タイトル・URL・掲載日を抽出する。
 
-- ICT教育ニュース（ict-enews.net）
-- こどもとIT（edu.watch.impress.co.jp）
-- COETECO（coeteco.jp）
-- リセマム（resemom.jp）
-- リシード（reseed.resemom.jp）
+- [ICT教育ニュース](https://ict-enews.net/)
+- [こどもとIT](https://edu.watch.impress.co.jp)
+- [COETECO](https://coeteco.jp)
+- [リセマム](https://resemom.jp)
+- [リシード](https://reseed.resemom.jp)
 
 ### Step 2: 記事の選定
 
