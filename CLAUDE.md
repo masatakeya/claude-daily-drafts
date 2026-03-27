@@ -6,14 +6,31 @@
 ## やること
 
 ### Step 1: 情報収集
-以下のRSSフィードを WebFetch で取得し、
-過去24時間以内の記事を抽出する。
 
-- https://ict-enews.net/feed/
-- https://edtechzine.jp/rss/new
-- https://coeteco.jp/feed
+以下のソースを順番に巡回する。
+各ソースは独立して処理し、1つが失敗しても他を続ける。
+
+#### 巡回手順（各ソース共通）
+
+1. まず RSS フィードを WebFetch で取得する
+2. RSS が取得できた場合 → 過去24時間以内の記事を抽出
+3. RSS が取得できない（エラー・ブロック・空）場合
+   → サイトのトップページ HTML を WebFetch で取得し、
+     記事タイトルとURLのリストを抽出して代替とする
+4. どちらも失敗した場合 → そのソースをスキップ（ログに記録）
+
+#### ソース一覧
+
+| サイト | RSS | トップページ（フォールバック） |
+|--------|-----|-------------------------------|
+| ICT教育ニュース | https://ict-enews.net/feed/ | https://ict-enews.net/ |
+| こどもとIT | https://edu.watch.impress.co.jp/data/rss/1.0/cit/feed.rdf | https://edu.watch.impress.co.jp/ |
+| COETECO | https://coeteco.jp/feed | https://coeteco.jp/ |
+| リセマム | https://resemom.jp/rss20.xml | https://resemom.jp/ |
+| リシード | https://reseed.resemom.jp/rss20.xml | https://reseed.resemom.jp/ |
 
 ### Step 2: 記事の選定
+
 以下のテーマに関連する記事を優先する。
 - 生成AI × 教育
 - プログラミング教育
@@ -21,10 +38,12 @@
 - 個別最適な学び
 - GIGAスクール・ICT活用
 
-無関係・広告的な内容はスキップ。
+無関係・広告・プレスリリース色の強い内容はスキップ。
+1日の草稿は最大3件まで。
 
 ### Step 3: Facebook投稿草稿を生成
-選定した記事ごとに、以下の形式で草稿を作成する。
+
+選定した記事ごとに以下の形式で草稿を作成する。
 
 ---
 【記事タイトル】
@@ -40,21 +59,22 @@
 ---
 
 ### Step 4: ファイルに保存
+
 drafts/YYYY-MM-DD.md としてコミットする。
 
-フォーマット：
 ---
 date: YYYY-MM-DD
 generated_at: HH:MM JST
 ---
 
-## 本日の候補記事と投稿草稿
+## 本日の投稿草稿
 
 （草稿を並べて記載）
 
+## 取得結果サマリー
+- 取得成功：（サイト名）
+- フォールバック使用：（サイト名）
+- スキップ：（サイト名とエラー理由）
+
 ## スキップした記事
 （タイトルとスキップ理由を簡潔に）
-
-
-
- 
